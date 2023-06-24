@@ -1,29 +1,37 @@
 import {
+    Alert,
   KeyboardAvoidingView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Ctextinput from "../Component/Ctextinput";
 import Cbutton from "../Component/Cbutton";
 import CtextInputButton from "../Component/CtextInputButton";
 
 const LoginScreen = () => {
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.inputContainer}>
-        {/* <TextInput
-        placeholder='Email'
-        // value={}
-        // onChangeText={text=>}
-        style={styles.input}
-        >   
-        </TextInput> */}
-        <Ctextinput title='User name' placeholder="Enter Email ..."></Ctextinput>
-        <Ctextinput title='Password' placeholder="Enter Password ..." secureTextEntry></Ctextinput>
-        <Cbutton title='Login'></Cbutton>
+        <Ctextinput
+          title="User name"
+          placeholder="Enter Email ..."
+          value={user}
+          onChangeText={value=>setUser(value)}
+        ></Ctextinput>
+        <Ctextinput
+          title="Password"
+          placeholder="Enter Password ..."
+          secureTextEntry
+          value={pass}
+          onChangeText={value=>setPass(value)}
+        ></Ctextinput>
+        <Cbutton onPress={()=>Alert.alert(user,pass)} title="Login"></Cbutton>
+        <Cbutton title="gi do"></Cbutton>
         <CtextInputButton></CtextInputButton>
       </View>
     </KeyboardAvoidingView>

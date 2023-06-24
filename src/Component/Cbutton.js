@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const Cbutton = ({title,onPress,backgroundColor}) => {
+const Cbutton = ({title,onPress}) => {
   return (
     <TouchableOpacity
     onPress={onPress}

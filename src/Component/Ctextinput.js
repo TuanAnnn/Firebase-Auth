@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 
-const Ctextinput = ({ title, placeholder, secureTextEntry }) => {
+const Ctextinput = ({ title, placeholder, secureTextEntry, value,onChangeText }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>
@@ -9,6 +9,8 @@ const Ctextinput = ({ title, placeholder, secureTextEntry }) => {
      <TextInput
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
+        value={value}
+        onChangeText={onChangeText}
       ></TextInput>
      </View>
     </View>
